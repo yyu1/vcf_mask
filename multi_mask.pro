@@ -74,11 +74,11 @@ PRO multi_mask, hlorey_file, vcf_file, hv_file, xdim, ydim, out_file
 	print, 'masking file...', systime()
 
 	;Open files for processing
-	openr, hlorey_lun, hlorey_file
-	openr, vcf_lun, vcf_file
-	openr, hv_lun, hv_file
+	openr, hlorey_lun, hlorey_file, /get_lun
+	openr, vcf_lun, vcf_file, /get_lun
+	openr, hv_lun, hv_file, /get_lun
 
-	openw, out_lun, out_file	
+	openw, out_lun, out_file, /get_lun
 
 
 	;Read and work on first win_size lines
